@@ -1,3 +1,11 @@
-# hello world
+# Python ASCII Converter
 
-repo to learn about ML/AI
+You read it here, takes in img formats .jpg/.png will convert to ascii illustration
+
+## Down the Line:
+
+- Colors
+- More filetypes
+- More customization
+- Browser Responsiveness
+
