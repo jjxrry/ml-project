@@ -15,13 +15,13 @@ You read it here, takes in img and will convert to ascii illustration
 ### Setup
 
 - Backend
-```
+```zsh
 cd backend
 
-<!-- init venv with python3 -->
+# init venv with python3
 python3 -m venv venv
 
-<!-- activate venv as venv -->
+# activate venv as venv
 source venv/bin/activate
 
 pip install -r requirements.txt
