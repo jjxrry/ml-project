@@ -38,7 +38,6 @@ async def convert_image(
     try:
         image_bytes = await file.read()
         ascii_art = image_to_ascii(image_bytes, width, height, charset)
-        # return ASCIIResponse(ascii_art=ascii_art)
         return JSONResponse(
             content={"ascii_art": ascii_art},
             status_code=200,
