@@ -14,7 +14,7 @@ def map_brightness_to_ascii(brightness: np.ndarray, charset: str) -> np.ndarray:
     return ascii_image
 
 
-def image_to_ascii(image_bytes: bytes, width: int = 100, height: int = None, charset: str = "@%#*+=-:. ") -> str:
+def image_to_ascii(image_bytes: bytes, width: int, height: int, charset: str) -> str:
     image = load_image(image_bytes)
     if height is None:
         # Maintain aspect ratio based on character dimensions
