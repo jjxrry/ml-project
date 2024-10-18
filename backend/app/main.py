@@ -31,6 +31,8 @@ async def convert_image(
     height: int = None,
     charset: str = "@%#*+=-:. ",
 ):
+    print(f"Received width: {width}, height: {height}, charset: {charset}")  # Log received values
+
     if not file.content_type.startswith("image/"):
         raise HTTPException(status_code=400, detail="Invalid image file")
     try:
@@ -38,7 +40,7 @@ async def convert_image(
         ascii_art = image_to_ascii(image_bytes, width, height, charset)
         # return ASCIIResponse(ascii_art=ascii_art)
         return JSONResponse(
-            content={"ascii_image": ascii_art},
+            content={"ascii_art": ascii_art},
             status_code=200,
             media_type="application/json",
         )

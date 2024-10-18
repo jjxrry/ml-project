@@ -1,0 +1,37 @@
+.ascii-art-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.ascii-art-textarea {
+    width: 600px; /* Initial width */
+    height: 400px; /* Initial height */
+    white-space: pre; /* Preserves whitespace and line breaks */
+    font-family: 'Courier New', Courier, monospace; /* Monospaced font for alignment */
+    background-color: #000; /* Black background for contrast */
+    color: #fff; /* White text for visibility */
+    padding: 10px;
+    border: none;
+    resize: none; /* Prevents resizing; remove if you want it resizable */
+    overflow: auto;
+    font-size: 6px; /* Adjust font size as needed */
+    line-height: 6px; /* Adjust line height as needed */
+}
+
+@media (max-width: 800px) {
+    .ascii-art-textarea {
+        width: 90%;
+        height: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    .ascii-art-textarea {
+        width: 100%;
+        height: 200px;
+        font-size: 4px;
+        line-height: 4px;
+    }
+}
