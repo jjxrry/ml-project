@@ -11,21 +11,24 @@ You read it here, takes in img and will convert to ascii illustration
 ## Try it yourself:
 
 - Clone the repo
-- backend
+
+### Setup
+
+- Backend
 ```
 cd backend
 
-**init venv with python3**
+<!-- init venv with python3 -->
 python3 -m venv venv
 
-**activate venv as venv**
+<!-- activate venv as venv -->
 source venv/bin/activate
 
 pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
-- frontend
+- Frontend
 ```
 cd frontend
 npm install
