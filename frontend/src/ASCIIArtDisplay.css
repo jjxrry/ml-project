@@ -1,3 +1,6 @@
+:root {
+	--normalized-output-size: 6px;
+}
 .ascii-art-container {
     display: flex;
     justify-content: center;
@@ -6,18 +9,18 @@
 }
 
 .ascii-art-textarea {
-    width: 800px; /* Initial width */
-    height: 600px; /* Initial height */
-    white-space: pre; /* Preserves whitespace and line breaks */
-    font-family: 'Courier New', Courier, monospace; /* Monospaced font for alignment */
-    background-color: #000; /* Black background for contrast */
-    color: #fff; /* White text for visibility */
+    width: 800px;
+    height: 600px;
+    white-space: pre;
+    font-family: 'Courier New', Courier, monospace; 
+    background-color: #000; 
+    color: #fff; 
     padding: 10px;
     border: none;
-    resize: none; /* Prevents resizing; remove if you want it resizable */
+    resize: none; 
     overflow: auto;
-    font-size: 10px; /* Adjust font size as needed */
-    line-height: 10px; /* Adjust line height as needed */
+    font-size: var(--normalized-output-size); 
+    line-height: var(--normalized-output-size); 
 }
 
 @media (max-width: 800px) {
