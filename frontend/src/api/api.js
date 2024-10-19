@@ -3,15 +3,17 @@ const API_DEVURL = 'http://127.0.0.1:8000'
 export const convertImageToASCII = async (file, width, height, charset) => {
     const formData = new FormData()
     formData.append('file', file)
-    formData.append('width', String(width))
-    if (height) formData.append('height', String(height))
-    formData.append('charset', String(charset))
+    formData.append('width', width)
+    if (height) formData.append('height', height)
+    formData.append('charset', charset)
 
-    let url = `${API_DEVURL}/convert_image?width=${width}&charset=${charset}`;
+    // charset not being passed correctly, encode fix
+    let url = `${API_DEVURL}/convert_image?width=${width}&charset=${encodeURIComponent(charset)}`;
     if (height) {
         url += `&height=${height}`;
     }
 
+    console.log("making request to: ", url)
     console.log('params being passed in the frontend', width, height, charset)
     try {
         // if we want to have the baseurl, we can just pass in the endpoint params as Form()
