@@ -1,0 +1,10 @@
+--  TODO: Action Items + Descriptions
+-- 1. Figure out how to pass the input params to the actual end art output
+-- 2. Along with the params, fix the charset input, the post request works in the backend but isn't being displayed
+-- 3. The network payload is showing the correct values when the request is made, but the input values into the convert function
+-- seem to be defaulting somehow
+--
+--
+-- NOTE: Ideas to Solve
+-- I think it has to do with the request URL, we need to pass those in like seen here:
+-- http://127.0.0.1:8000/convert_image?width=400&height=300&charset=jerry

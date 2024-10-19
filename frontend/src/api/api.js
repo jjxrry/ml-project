@@ -3,13 +3,19 @@ const API_DEVURL = 'http://127.0.0.1:8000'
 export const convertImageToASCII = async (file, width, height, charset) => {
     const formData = new FormData()
     formData.append('file', file)
-    formData.append('width', width)
-    if (height) formData.append('height', height)
-    formData.append('charset', charset)
+    formData.append('width', String(width))
+    if (height) formData.append('height', String(height))
+    formData.append('charset', String(charset))
+
+    let url = `${API_DEVURL}/convert_image?width=${width}&charset=${charset}`;
+    if (height) {
+        url += `&height=${height}`;
+    }
 
     console.log('params being passed in the frontend', width, height, charset)
     try {
-        const response = await fetch(`${API_DEVURL}/convert_image`, {
+        // const response = await fetch(`${API_DEVURL}/convert_image`, {
+        const response = await fetch(url, {
             method: "POST",
             body: formData,
         })
@@ -21,7 +27,7 @@ export const convertImageToASCII = async (file, width, height, charset) => {
         }
 
         const data = await response.json()
-        console.log("succesfull json response", response)
+        console.log("succesful json response", data)
 
         if (!data.ascii_art) {
             console.log('no ascii_art field')
