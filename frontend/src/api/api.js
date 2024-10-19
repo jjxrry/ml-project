@@ -14,6 +14,7 @@ export const convertImageToASCII = async (file, width, height, charset) => {
 
     console.log('params being passed in the frontend', width, height, charset)
     try {
+        // if we want to have the baseurl, we can just pass in the endpoint params as Form()
         // const response = await fetch(`${API_DEVURL}/convert_image`, {
         const response = await fetch(url, {
             method: "POST",
