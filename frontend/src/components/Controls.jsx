@@ -6,7 +6,7 @@ export const Controls = ({ width, setWidth, height, setHeight, charset, setChars
                 <input
                     type="number"
                     value={width}
-                    onChange={(e) => setWidth(parseInt(e.target.value) || 100)}
+                    onChange={(e) => setWidth(parseInt(e.target.value))}
                     min="10"
                     max="1000"
                 />
